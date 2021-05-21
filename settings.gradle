@@ -1,0 +1,4 @@
+rootProject.name = 'spring-kafka-multiple-event-types-in-same-topic'
+
+include 'avro'
+include 'proto'

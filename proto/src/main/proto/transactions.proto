@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package com.rbiedrawa.app.proto.events.transactions;
+
+option java_multiple_files = true;
+
+message TransactionEvent {
+  string eid = 1;
+  google.protobuf.Timestamp createdDate = 2;
+
+  oneof payload {
+    TransactionStarted transactionStarted = 3;
+    TransactionCompleted transactionCompleted = 4;
+    TransactionAborted transaction_aborted = 5;
+  }
+}
+
+message TransactionStarted {
+  string eId = 1;
+}
+
+message TransactionCompleted {
+  string eId = 1;
+}
+
+message TransactionAborted {
+  string eId = 1;
+}
