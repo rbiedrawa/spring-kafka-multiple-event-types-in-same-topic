@@ -1,4 +1,4 @@
-package com.rbiedrawa.kafka.app;
+package com.rbiedrawa.kafka.avro.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

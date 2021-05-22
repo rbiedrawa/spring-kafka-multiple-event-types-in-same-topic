@@ -1,0 +1,19 @@
+// Example of using Avro union
+{
+  "type": "record",
+  "namespace": "com.rbiedrawa.app.avro.events.transactions",
+  "name": "TransactionEvent",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "payload",
+      "type": [
+        "com.rbiedrawa.app.avro.events.transactions.TransactionCompleted",
+        "com.rbiedrawa.app.avro.events.transactions.TransactionStarted"
+      ]
+    }
+  ]
+}

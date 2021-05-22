@@ -1,0 +1,17 @@
+{
+  "type": "record",
+  "namespace": "com.rbiedrawa.app.avro.events.transactions",
+  "name": "TransactionAggregate",
+  "fields": [
+    {
+      "name": "transactionId",
+      "type": "string",
+      "default": ""
+    },
+    {
+      "name": "state",
+      "type": "string",
+      "default": ""
+    }
+  ]
+}

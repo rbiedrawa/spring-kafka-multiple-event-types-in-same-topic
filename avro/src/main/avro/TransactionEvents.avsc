@@ -1,0 +1,4 @@
+[
+  "com.rbiedrawa.app.avro.events.transactions.TransactionCompleted",
+  "com.rbiedrawa.app.avro.events.transactions.TransactionStarted"
+]

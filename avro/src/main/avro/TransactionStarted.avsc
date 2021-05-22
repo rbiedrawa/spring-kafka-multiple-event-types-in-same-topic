@@ -1,0 +1,9 @@
+{
+  "type":"record",
+  "namespace": "com.rbiedrawa.app.avro.events.transactions",
+  "name":"TransactionStarted",
+  "fields": [
+    {"name": "eventId", "type": "string"},
+    {"name": "transactionId", "type":"string"}
+  ]
+}

@@ -1,0 +1,26 @@
+//buildscript {
+//	repositories {
+//		mavenCentral()
+//	}
+//	dependencies {
+//		classpath 'org.yaml:snakeyaml:1.28'
+//	}
+//}
+
+schemaRegistry {
+	// Uncomment to use property from application.yml
+//	def cfg = new org.yaml.snakeyaml.Yaml().load( new File("${project.projectDir}/src/main/resources/application.yml").newInputStream() )
+//	url = "${cfg.spring.kafka.properties.schema.registry.url}"
+
+	url = "http://localhost:8081"
+
+	register {
+		subject('com.rbiedrawa.app.avro.events.transactions.TransactionAggregate', 'src/main/avro/TransactionAggregate.avsc', 'AVRO')
+		subject('com.rbiedrawa.app.avro.events.transactions.TransactionCompleted', 'src/main/avro/TransactionCompleted.avsc', 'AVRO')
+		subject('com.rbiedrawa.app.avro.events.transactions.TransactionStarted', 'src/main/avro/TransactionStarted.avsc', 'AVRO')
+
+		subject('transaction.events-value', 'src/main/avro/TransactionEvents.avsc', 'AVRO')
+				.addReference("com.rbiedrawa.app.avro.events.transactions.TransactionCompleted", "com.rbiedrawa.app.avro.events.transactions.TransactionCompleted", 1)
+				.addReference("com.rbiedrawa.app.avro.events.transactions.TransactionStarted", "com.rbiedrawa.app.avro.events.transactions.TransactionStarted", 1)
+	}
+}
