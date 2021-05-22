@@ -1,1 +1,26 @@
-
+#spring:
+#  application:
+#    name: kstream-avro
+#  kafka:
+#    bootstrap-servers: ${APP_KAFKA_BOOTSTRAP_SERVERS:kubernetes.docker.internal:9092}
+#    properties:
+#      schema.registry.url: ${APP_SCHEMA_REGISTRY_URL:http://kubernetes.docker.internal:8081}
+#      auto-register-schemas: false  # disables automatic registration of the event type, so that it does not override the union as the latest schema in the subject
+#      use.latest.version: true # causes the Avro serializer to look up the latest schema version in the subject (which will be the union) and use that for serialization; otherwise, if set to false, the serializer will look for the event type in the subject and fail to find it
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          configuration:
+#            default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+#            default.value.serde: io.confluent.kafka.streams.serdes.protobuf.KafkaProtobufSerde
+#            processing.guarantee: exactly_once
+#            commit.interval.ms: 100
+#          producer-properties:
+#            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+#            value.serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+#            acks: "all"
+#          consumer-properties:
+#            value-deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+#            key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#

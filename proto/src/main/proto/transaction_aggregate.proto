@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.rbiedrawa.app.proto.events.transactions;
+option java_multiple_files = true;
+
+message TransactionAggregate {
+  string transaction_id = 1;
+  string state = 2;
+}

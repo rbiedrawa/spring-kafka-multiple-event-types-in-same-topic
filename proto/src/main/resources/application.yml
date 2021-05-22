@@ -1,1 +1,25 @@
-
+spring:
+  application:
+    name: transaction-service
+  kafka:
+    bootstrap-servers: ${APP_KAFKA_BOOTSTRAP_SERVERS:kubernetes.docker.internal:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
+      acks: "all"
+    consumer:
+      value-deserializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    properties:
+      schema.registry.url: ${APP_SCHEMA_REGISTRY_URL:http://kubernetes.docker.internal:8081}
+      auto.register.schemas: true  # don't use in production, it's better to register and control schema using deployment pipelines
+#      derive.type: true # not needed
+#      use.latest.version: true # not needed
+    streams:
+      application-id: "transaction-kstream"
+      properties:
+        processing.guarantee: exactly_once_beta
+        commit.interval.ms: 50
+        replication.factor: 1
+        producer:
+          acks: "all"
