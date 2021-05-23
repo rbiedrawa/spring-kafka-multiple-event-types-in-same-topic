@@ -47,3 +47,12 @@ spring:
                 configuration:
                   application.id: "avro-transactions-aggregate-kstream"
                   commit.interval.ms: 50 # overwriting default properties, useful when we have multiple KStreams inside same Spring Boot application.
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: health,info

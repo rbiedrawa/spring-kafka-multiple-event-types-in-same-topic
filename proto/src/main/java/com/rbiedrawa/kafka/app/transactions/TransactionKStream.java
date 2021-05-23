@@ -31,7 +31,7 @@ public class TransactionKStream {
 	@Bean
 	public KTable<String, TransactionAggregate> transactionStream(StreamsBuilder sb) {
 		return sb.stream(Topics.TRANSACTIONS, Consumed.with(Serdes.String(), serdeFactory.of(TransactionEvent.class)))
-				 .peek((transactionId, event) -> log.info("Consumed transaction event {} of type {}", transactionId, event.getPayloadCase()))
+				 .peek((transactionId, event) -> log.info("Consumed transaction event of type {}. TransactionId {}", event.getPayloadCase(), transactionId))
 				 .groupByKey()
 				 .aggregate(() -> TransactionAggregate.newBuilder().build(),
 							transactionAggregator(),

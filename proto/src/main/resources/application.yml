@@ -20,3 +20,12 @@ spring:
         commit.interval.ms: 50
         producer:
           acks: "all"
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: health,info
