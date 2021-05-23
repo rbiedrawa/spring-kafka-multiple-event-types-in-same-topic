@@ -81,7 +81,7 @@ This repository contains sample Spring Boot setup for handling multiple event ty
       curl -X GET --location "http://localhost:8080/api/transactions/d1e869d5-fb9b-4b13-ac43-678693d5910d"
       ```
 
-* Stop docker-compose demo.
+* Stop docker-compose.
   ```shell
   docker-compose -f docker/docker-compose.yml down -v
   ```
