@@ -91,14 +91,14 @@ This repository contains sample Spring Boot setup for handling multiple event ty
 
 | Name | Endpoint | 
 | -------------:|:--------:|
-| `Spring Boot Application` | http://localhost:8080/ |
+| `Spring Boot Application` | http://localhost:8080 |
 | `Spring Boot Application - Actuator health` | http://localhost:8080/actuator/health |
 | `Find transaction by id` | http://localhost:8080/api/transactions/{transactionId} |
-| `Schema Registry` | http://localhost:8081/ |
-| `Schema Registry - Schemas` | http://localhost:8081/schemas/ |
+| `Schema Registry` | http://localhost:8081 |
+| `Schema Registry - Schemas` | http://localhost:8081/schemas |
 | `Schema Registry - Find schema by id` | http://localhost:8081/schemas/ids/{id} |
 | `Schema Registry - Subjects` | http://localhost:8081/subjects |
-| `Confluent Control Center` | http://localhost:9021/ |
+| `Confluent Control Center` | http://localhost:9021 |
 
 ## References
 
