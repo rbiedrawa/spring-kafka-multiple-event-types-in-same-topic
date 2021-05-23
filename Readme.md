@@ -1,4 +1,4 @@
-# Putting several event types in single kafka topic (PoC)
+# Putting multiple event types in single kafka topic (PoC)
 
 This repository contains sample Spring Boot setup for handling multiple event types in single kafka topic.
 
