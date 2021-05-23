@@ -6,9 +6,9 @@ This repository contains sample Spring Boot setup for handling multiple event ty
 
 * Java Functions using Spring Cloud Stream Kafka Streams binder (`avro` project).
 * Avro's unions with schema references.
-* Avro Schema registration with gradle.
+* Avro Schema registration via gradle task.
 * Protobuf schema references.
-* Unit testing via `TopologyTestDriver`.
+* Unit testing with `TopologyTestDriver`.
 
 ## Getting Started
 
