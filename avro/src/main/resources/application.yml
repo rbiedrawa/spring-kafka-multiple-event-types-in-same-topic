@@ -1,6 +1,6 @@
 spring:
   application:
-    name: kstream-avro
+    name: "avro-transaction-service"
   kafka:
     bootstrap-servers: "localhost:9092"
     properties:
@@ -23,11 +23,11 @@ spring:
           transactionAggregateFunction;
       bindings:
         transaction_events_output:
-          destination: transaction.events
+          destination: avro.transaction.events
           content-type: application/*+avro
 
         transactionAggregateFunction-in-0:
-          destination: transaction.events
+          destination: avro.transaction.events
       kafka:
         binder:
           producer-properties:
@@ -45,5 +45,5 @@ spring:
             functions:
               transactionAggregateFunction:
                 configuration:
-                  application.id: "transactions-kstream"
+                  application.id: "avro-transactions-aggregate-kstream"
                   commit.interval.ms: 50 # overwriting default properties, useful when we have multiple KStreams inside same Spring Boot application.

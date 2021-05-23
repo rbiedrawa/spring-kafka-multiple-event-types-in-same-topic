@@ -19,7 +19,7 @@ schemaRegistry {
 		subject('com.rbiedrawa.app.avro.events.transactions.TransactionCompleted', 'src/main/avro/TransactionCompleted.avsc', 'AVRO')
 		subject('com.rbiedrawa.app.avro.events.transactions.TransactionStarted', 'src/main/avro/TransactionStarted.avsc', 'AVRO')
 
-		subject('transaction.events-value', 'src/main/avro/TransactionEvents.avsc', 'AVRO')
+		subject('avro.transaction.events-value', 'src/main/avro/TransactionEvents.avsc', 'AVRO')
 				.addReference("com.rbiedrawa.app.avro.events.transactions.TransactionCompleted", "com.rbiedrawa.app.avro.events.transactions.TransactionCompleted", 1)
 				.addReference("com.rbiedrawa.app.avro.events.transactions.TransactionStarted", "com.rbiedrawa.app.avro.events.transactions.TransactionStarted", 1)
 	}

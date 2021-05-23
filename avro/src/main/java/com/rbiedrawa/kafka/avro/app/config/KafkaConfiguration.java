@@ -25,6 +25,6 @@ public class KafkaConfiguration {
 
 	@NoArgsConstructor(access = AccessLevel.PRIVATE)
 	public static final class Topics {
-		public static final String TRANSACTIONS = "transaction.events";
+		public static final String TRANSACTIONS = "avro.transaction.events";
 	}
 }
