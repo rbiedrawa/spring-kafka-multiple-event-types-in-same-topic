@@ -106,6 +106,8 @@ This repository contains sample Spring Boot setup for handling multiple event ty
 
 * [Putting Several Event Types in the Same Topic – Revisited](https://www.confluent.io/blog/multiple-event-types-in-the-same-kafka-topic/)
 
+* [How to Choose Between Strict and Dynamic Schemas](https://www.confluent.io/blog/spring-kafka-protobuf-part-1-event-data-modeling/)
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
