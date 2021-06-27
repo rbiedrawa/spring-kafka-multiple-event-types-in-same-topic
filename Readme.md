@@ -108,6 +108,8 @@ This repository contains sample Spring Boot setup for handling multiple event ty
 
 * [How to Choose Between Strict and Dynamic Schemas](https://www.confluent.io/blog/spring-kafka-protobuf-part-1-event-data-modeling/)
 
+* [Schema evolution in Avro, Protocol Buffers and Thrift](https://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html)
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
