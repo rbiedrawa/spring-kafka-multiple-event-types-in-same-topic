@@ -12,7 +12,7 @@ This repository contains sample Spring Boot setup for handling multiple event ty
 
 ## Getting Started
 
-### Prerequisite
+### Prerequisites
 
 * Java 11
 * Docker
